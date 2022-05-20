@@ -1,6 +1,6 @@
-my_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
+my_list = ["a", "b", "c", "d", "e"]
 
-my_string = str(my_list)
+my_string = "".join(my_list)
 
 print(my_string[::-1])
 

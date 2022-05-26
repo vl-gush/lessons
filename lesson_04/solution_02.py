@@ -6,7 +6,7 @@ index = 0
 reverse_index = -1
 message = "Yes"
 
-while index != len(my_string):
+while index != len(my_string) // 2 + 1:
     if my_string[index] != my_string[reverse_index]:
         message = "No"
         break

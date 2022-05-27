@@ -4,10 +4,15 @@
 """
 
 
-def month_to_season(number_of_month:int) -> str:
-    seasons = {"Winter": [1, 2, 12], "Spring": [3, 4, 5], "Summer": [6, 7, 8], "Autumn": [9, 10, 11]}
-    for season, months in seasons.items():
-        if number_of_month in months:
+def month_to_season(month):
+    mapping = {
+        "Winter": [1, 2, 12],
+        "Spring": [3, 4, 5],
+        "Summer": [6, 7, 8],
+        "Autumn": [9, 10, 11]
+    }
+    for season, month_list in mapping.items():
+        if month in month_list:
             return season
 
 

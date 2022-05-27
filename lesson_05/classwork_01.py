@@ -4,9 +4,9 @@
 """
 
 def greeting(name):
-    return f"Hello, {name}!"
+    print(f"Hello, {name}!")
 
 names = ["Alex", "Bob", "John", "Julia", "Katy"]
 
 for name in names:
-    print(greeting(name))
+    greeting(name)

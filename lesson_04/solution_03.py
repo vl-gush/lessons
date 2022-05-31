@@ -7,13 +7,13 @@ xor_uncipher, которая по зашифрованной строке и к�
 
 def xor_cipher(string, key):
     cipher = ""
-    for i in string:
-        cipher += chr(ord(i) ^ key)
+    key = key * (len(string) // len(key) + 1)
+    key = key[:len(string)]
+    index = 0
+    while index < len(string):
+        cipher += chr(ord(string[index]) ^ ord(key[index]))
+        index += 1
     return cipher
 
-
-def xor_uncipher(cipher, key):
-    string = ""
-    for i in cipher:
-        string += chr(ord(i) ^ key)
-    return string
+print(xor_cipher('text', '13'))
+print(xor_cipher(xor_cipher('text', '13'), '13'))

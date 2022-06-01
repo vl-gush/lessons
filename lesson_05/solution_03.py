@@ -9,9 +9,9 @@ import requests
 
 
 def download_file(file_url, file_path):
-    responce = requests.get(file_url).text
+    response = requests.get(file_url).text
     with open(file_path, "w") as file:
-        file.write(responce)
+        file.write(response)
 
 
 download_file(

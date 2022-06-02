@@ -11,7 +11,3 @@ suit = ("Hearts", "Diamonds", "Clubs", "Spades")
 
 def get_card():
     return choice(nominal), choice(suit)
-
-
-for _ in range(5):
-    print(get_card())

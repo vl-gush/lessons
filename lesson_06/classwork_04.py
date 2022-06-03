@@ -37,6 +37,7 @@ while True:
     score += value
 
     if score > 21:
+        print("Your score:", score)
         print("Game over.")
         break
 

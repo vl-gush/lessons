@@ -18,14 +18,24 @@ following the example above, solution(12) would return [9, 1, 1, 1].
 import math
 
 
-def solar_doomsday(square):
+def solar_doomsday(area):
     my_list = []
-    while square > 0:
-        panel = math.floor(math.sqrt(square))
+    while area > 0:
+        panel = math.floor(math.sqrt(area)) ** 2
         my_list.append(panel)
-        square -= panel ** 2
+        area -= panel
     return my_list
 
 
+def solar_doomsday_recursive(area, res=[]):
+    if area == 1:
+        return res.append(1)
+    panel = math.floor(math.sqrt(area)) ** 2
+    res.append(panel)
+    solar_doomsday_recursive(area - panel, res)
+    return res
+
+
 if __name__ == "__main__":
-    print(solar_doomsday(int(input("Enter the square: "))))
+    print(solar_doomsday(1000))
+    print(solar_doomsday_recursive(1000))

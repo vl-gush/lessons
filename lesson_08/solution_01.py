@@ -7,7 +7,7 @@
 
 class Car:
 
-    def __init__(self, brand: str, model: str, year: int, speed: int=0):
+    def __init__(self, brand: str, model: str, year: int, speed: int = 0):
         self.brand = brand
         self.model = model
         self.year = year

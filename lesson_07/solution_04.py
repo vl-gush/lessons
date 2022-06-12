@@ -28,14 +28,13 @@ def solar_doomsday(area):
 
 
 def solar_doomsday_recursive(area, res=[]):
-    if area == 1:
-        return res.append(1)
+    if area == 0:
+        return res
     panel = math.floor(math.sqrt(area)) ** 2
     res.append(panel)
-    solar_doomsday_recursive(area - panel, res)
-    return res
+    return solar_doomsday_recursive(area - panel, res)
 
 
 if __name__ == "__main__":
-    print(solar_doomsday(1000))
-    print(solar_doomsday_recursive(1000))
+    print(solar_doomsday(20000000))
+    print(solar_doomsday_recursive(20000000))

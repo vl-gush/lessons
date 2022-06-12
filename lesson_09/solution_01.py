@@ -61,13 +61,13 @@ class Square:
         self.point2 = point2
 
     @staticmethod
-    def lenghts_of_sides(point1: Point, point2: Point) -> tuple:
+    def lengths_of_sides(point1: Point, point2: Point) -> tuple:
         return abs(point1.x - point2.x) , abs(point1.y - point2.y)
 
     def perimeter(self) -> float:
-        a, b = Square.lenghts_of_sides(point1=self.point1, point2=self.point2)
+        a, b = Square.lengths_of_sides(point1=self.point1, point2=self.point2)
         return (a * b) * 2
 
     def square(self) -> float:
-        a, b = Square.lenghts_of_sides(point1=self.point1, point2=self.point2)
+        a, b = Square.lengths_of_sides(point1=self.point1, point2=self.point2)
         return a * b

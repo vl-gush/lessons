@@ -20,4 +20,5 @@ def hanoi(n: int, _from: int = 1, _to: int = 2, _buf: int = 3):
         hanoi(n - 1, _buf, _to, _from)
 
 
-hanoi(3)
+if __name__ == "__main__":
+    hanoi(4)

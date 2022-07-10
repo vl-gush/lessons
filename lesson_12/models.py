@@ -17,6 +17,10 @@ class User(Base):
 
     profile = relationship("Profile", back_populates="user", uselist=False)
     addresses = relationship("Address", back_populates="user")
+    purchases = relationship("Purchase", back_populates="user")
+
+    def __str__(self) -> str:
+        return f"{self.email}"
 
 
 class Profile(Base):
@@ -37,3 +41,31 @@ class Address(Base):
 
     user_id = Column(Integer, ForeignKey("user.id"))
     user = relationship("User", back_populates="addresses")
+
+
+class Product(Base):
+    __tablename__ = "product"
+    id = Column(Integer, primary_key=True)
+    name = Column(String)
+    price = Column(Integer)
+    quantity = Column(Integer)
+    comment = Column(String)
+
+    purchases = relationship("Purchase", back_populates="product")
+
+    def __str__(self) -> str:
+        return f"{self.id} {self.name} {self.price} {self.quantity} {self.comment}"
+
+
+class Purchase(Base):
+    __tablename__ = "purchase"
+    id = Column(Integer, primary_key=True)
+    user_id = Column(ForeignKey("user.id"))
+    product_id = Column(ForeignKey("product.id"))
+    count = Column(Integer)
+
+    user = relationship("User", back_populates="purchases")
+    product = relationship("Product", back_populates="purchases")
+
+    def __str__(self) -> str:
+        return f"{self.user_id} {self.product_id}"
